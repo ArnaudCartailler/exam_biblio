@@ -11,7 +11,9 @@ class Book
 			  $date,
 			  $summary,
 			  $available,
-			  $id_user;
+			  $id_user,
+			  $id_categories,
+			  $id_images;
 
 	const available = [
 		0 => 'No',
@@ -151,6 +153,38 @@ class Book
 		return $this;
 	}
 
+	/**
+	 * Set the value of $id_categories
+	 *
+	 * @param integer $id_categories
+	 * @return self
+	 */
+	public function setIdcategories($id_categories)
+	{
+		$id_categories = (int)$id_categories;
+		if ($id_categories > 0) {
+			$this->id_categories = $id_categories;
+		}
+		return $this;
+	}
+
+	/**
+	 * Set the value of $id_images
+	 *
+	 * @param integer $id_images
+	 * @return self
+	 */
+	public function setIdimages($id_images)
+	{
+		$id_images = (int)$id_images;
+		if ($id_images > 0) {
+			$this->id_images = $id_images;
+		}
+		return $this;
+	}
+
+
+
 
 
 	//////////////////    GETTERS    //////////////////
@@ -229,4 +263,27 @@ class Book
 
 	}
 
+	/**
+	 * Get the value of $id_categories
+	 *
+	 * @return $id_categories
+	 */
+	public function getIdcategories()
+	{
+
+		return $this->id_categories;
+
+	}
+
+	/**
+	 * Get the value of $id_images
+	 *
+	 * @return $id_images
+	 */
+	public function getIdimages()
+	{
+
+		return $this->id_images;
+
+	}
 }

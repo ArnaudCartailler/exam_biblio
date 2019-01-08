@@ -6,9 +6,7 @@ class Category
 {
 
 	protected $id,
-			  $name,
-			  $id_book;
-
+			  $name;
 
 	/**
 	 * Constructor
@@ -68,27 +66,13 @@ class Category
 	 */
 	public function setName(string $name)
 	{
-		if (in_array($name))
+		if (is_string($name))
 		{
 			$this->name = $name;
 		}
 		return $this;
 	}
 
-	/**
-	 * Set the value of $id_book
-	 *
-	 * @param integer $id_book
-	 * @return self
-	 */
-	public function setIdbook($id_book)
-	{
-		$id_book = (int)$id_book;
-		if ($id_book > 0) {
-			$this->id_book = $id_book;
-		}
-		return $this;
-	}
 
 
 	//////////////////    GETTERS    //////////////////
@@ -111,16 +95,6 @@ class Category
 	public function getName()
 	{
 		return $this->name;
-	}
-
-	/**
-	 * Get the value of $id_book
-	 *
-	 * @return $id_book
-	 */
-	public function getIdbook()
-	{
-		return $this->id_book;
 	}
 
 

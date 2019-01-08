@@ -48,13 +48,15 @@ class BookManager
      */
     public function add(Book $book)
     {
-        $query = $this->getDb()->prepare('INSERT INTO books(title, author, date, summary, available, id_users) VALUES (:title, :author, :date, :summary, :available, :id_users)');
+        $query = $this->getDb()->prepare('INSERT INTO books(title, author, date, summary, available, id_users, id_categories) VALUES (:title, :author, :date, :summary, :available, :id_users, :id_categories)');
         $query->bindValue("title", $book->getTitle(), PDO::PARAM_STR);
         $query->bindValue("author", $book->getAuthor(), PDO::PARAM_STR);
         $query->bindValue("date", $book->getDate(), PDO::PARAM_STR);
         $query->bindValue("summary", $book->getSummary(), PDO::PARAM_STR);
         $query->bindValue("available", $book->getAvailable(), PDO::PARAM_INT);
         $query->bindValue("id_users", $book->getIduser(), PDO::PARAM_INT);
+        $query->bindValue("id_categories", $book->getCategories(), PDO::PARAM_INT);
+
         $query->execute();
     }
 

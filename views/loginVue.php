@@ -14,7 +14,7 @@ include("template/header.php")
     </div>
       <button name="login" type="submit" class="btn btn-primary">Submit</button>
   </form>
-    <a href="signup.php">No account ? Click here !</a>
+    <a class="account" href="signup.php">No account ? Click here !</a>
 </div>
 
  <?php

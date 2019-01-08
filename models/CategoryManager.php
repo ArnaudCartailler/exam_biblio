@@ -48,9 +48,8 @@ class CategoryManager
      */
     public function add(Category $category)
     {
-        $query = $this->getDb()->prepare('INSERT INTO categories (name, id_books) VALUES (:name, :date, :id_books)');
+        $query = $this->getDb()->prepare('INSERT INTO categories (name) VALUES (:name)');
         $query->bindValue("name", $category->getName(), PDO::PARAM_STR);
-        $query->bindValue("id_books", $category->getIdbook(), PDO::PARAM_INT);
         $query->execute();
     }
 

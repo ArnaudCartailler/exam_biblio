@@ -23,7 +23,7 @@ include("template/header.php")
     </div>
       <button name="new" type="submit" class="btn btn-primary">Submit</button>
   </form>
-    <a href="login.php" >Already an account ? Click here !</a>
+    <a class="account" href="login.php" >Already an account ? Click here !</a>
 </div>
 
 

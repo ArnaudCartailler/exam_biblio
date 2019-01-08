@@ -7,8 +7,7 @@ class Image
 
 	protected $id,
 			  $source,
-			  $alt,
-			  $id_book;
+			  $alt;
 
 
 	/**
@@ -91,21 +90,6 @@ class Image
 	}
 
 
-	/**
-	 * Set the value of $id_book
-	 *
-	 * @param integer $id_book
-	 * @return self
-	 */
-	public function setIdbook($id_book)
-	{
-		$id_book = (int)$id_book;
-		if ($id_book > 0) {
-			$this->id_book = $id_book;
-		}
-		return $this;
-	}
-
 
 	//////////////////    GETTERS    //////////////////
 
@@ -137,16 +121,6 @@ class Image
 	public function getAlt()
 	{
 		return $this->alt;
-	}
-
-	/**
-	 * Get the value of $id_book
-	 *
-	 * @return $id_book
-	 */
-	public function getIdbook()
-	{
-		return $this->id_book;
 	}
 
 }

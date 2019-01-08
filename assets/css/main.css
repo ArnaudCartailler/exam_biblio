@@ -97,11 +97,137 @@ textarea {
 
     body 
     {
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Roboto', Times, serif;
     }
 
+    /**
+    All for the header + nav bar
+    */
 
+        .container-fluid .index 
+        {
+            width: 100%;
+            padding-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            background-color: #252627;
+            box-shadow: 1px 2px 5px lightgrey;
+        }
 
+        .container-fluid .navbar{
+             background-color: #252627!important;
+            box-shadow: 1px 2px 5px lightgrey;
+
+        }
+
+        .container-fluid .navbar a{
+            color : white!important;
+        }
+
+        .container-fluid .logout
+        {
+             border: none;
+             color : white;
+             background-color: #252627;
+             transition : 0.5s;
+        }
+
+        .container-fluid .logout:hover {
+            transition : 0.5s;
+            border: none;
+            color: white;
+            transform: scale(1.2);
+            background-color: red;
+            border-radius : 5px;
+        }
+
+         .container-fluid .nav {
+             transition: 0.5s;
+         }
+
+          .container-fluid .nav button{
+              color: white!important;
+          }
+
+         .container-fluid .nav:hover {
+             transition: 0.5s;
+             border: none;
+             color: white;
+             transform: scale(1.2);
+             background-color: grey;
+             border-radius: 5px;
+         }
+
+         /**
+         Effect on the add button
+         */
+
+         .add a i {
+             text-align: center;
+             font-size: 300%;
+             color: black;
+             margin-right: 20px;
+         }
+
+         .add a i:hover {
+             text-align: center;
+             color: #02C2E6;
+             -moz-animation: spin .6s 0.5 linear;
+             -o-animation: spin .6s 0.5 linear;
+             -webkit-animation: spin .6s 0.5 linear;
+             animation: spin .6s 0.5 linear;
+         }
+
+         @-webkit-keyframes spin {
+             0% {
+                 -webkit-transform: rotate(0deg);
+             }
+
+             100% {
+                 -webkit-transform: rotate(359deg);
+             }
+         }
+
+         @-moz-keyframes spin {
+             0% {
+                 -moz-transform: rotate(0deg);
+             }
+
+             100% {
+                 -moz-transform: rotate(359deg);
+             }
+         }
+
+         @-o-keyframes spin {
+             0% {
+                 -o-transform: rotate(0deg);
+             }
+
+             100% {
+                 -o-transform: rotate(359deg);
+             }
+         }
+
+         @-ms-keyframes spin {
+             0% {
+                 -ms-transform: rotate(0deg);
+             }
+
+             100% {
+                 -ms-transform: rotate(359deg);
+             }
+         }
+
+         @keyframes spin {
+             0% {
+                 transform: rotate(0deg);
+             }
+
+             100% {
+                 transform: rotate(359deg);
+             }
+         }
 /* #####################################################################
 /* ##########################   SMARTPHONE   ########################### */
 /* ##################################################################### */
@@ -124,24 +250,71 @@ textarea {
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
 
-}
+    .container-fluid form button
+    {
+        background-color : #252627;
+        border : none;
+        margin-bottom : 10px;
+    }
+
+    .container-fluid form button:hover {
+            transition : 0.5s;
+            transform: scale(1.2);
+            box-shadow: 5px 5px 5px lightgrey;
+    }
+
+     .container-fluid .account  
+     {
+         text-decoration: underline;
+         transition : 0.5s;
+     }
+
+       .container-fluid .account:hover 
+       {
+           transition : 0.5s;
+           text-decoration: underline;
+           color: red;
+
+       }
+
+       .add_book
+       {
+        margin-top : 50px;
+        margin-left: 30%;
+
+       }
+
+       .category
+       {
+           border: 1px solid lightgrey;
+           border-radius: 3px;
+           background-color: white;
+           text-align: center;
+           padding : 5px;
+       }
+
+       .add_book .select-category 
+       {
+           margin-left: 30px;
+       }
+
+
+       .add_book .form-group
+       {
+           margin: 30px;
+       }
+
+       .add_book button {
+           margin: 30px;
+       }
+
 /* ##################################################################### */
 /* ########################   LARGE DESKTOPS   ######################### */
 /* ##################################################################### */
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
 
-
 }
-
-
-
-
-
-
-
-
-
 
 
 

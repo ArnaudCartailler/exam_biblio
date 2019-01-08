@@ -5,8 +5,8 @@
 <div class="container-fluid my-5">
   <div class="row">
 
-    <div class="add m-auto text-center mb-2">
-      <a href="book_form.php"><i class="fas fa-plus-circle"></i></a>
+    <div class="add m-auto text-center mb-2" data-aos="zoom-in" data-aos-duration="500">
+      <a  href="book_form.php"><i class="fas fa-plus-circle fa-3x"></i></a>
     </div>
 
   </div>
@@ -14,10 +14,10 @@
 
 
   <div class="row">
-  <?php foreach ($Books as $book) 
+  <?php foreach ($books as $book) 
   {
     ?>
-    
+
     <ul class="list-unstyled m-5">
       <li>Title: <?php echo $book->getTitle(); ?></li>
       <li>Author: <?php echo $book->getAuthor(); ?></li>

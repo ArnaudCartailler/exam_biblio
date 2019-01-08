@@ -29,4 +29,20 @@ $CategoryManager = new CategoryManager($db);
 $ImageManager = new ImageManager($db);
 $AdminManager = new AdminManager($db);
 
+if(empty($_SESSION['user'])){
+
+    header('location: login.php');
+
+} elseif(isset($_POST['logout']))
+{
+
+    session_destroy();
+
+    header('location: login.php');
+
+    exit();
+}
+
+$books = $BookManager->getBooks();
+
 include "../views/indexVue.php";
