@@ -2,8 +2,9 @@
 include("template/header.php")
 ?>
 
+<div id="particles-js">
 
-<div class="container-fluid">
+<div class="container-fluid detail-book">
   <div class="row">
 
         <ul class="mt-5 detail">
@@ -82,6 +83,7 @@ include("template/header.php")
 
         </form>
 
+</div>
 
  <?php
 include("template/footer.php")

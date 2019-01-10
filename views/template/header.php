@@ -21,7 +21,7 @@
 
 <div class="container-fluid">
 
-    <div class ="row text-center">
+    <div class ="row text-center head-login">
 
  <?php
 
@@ -32,7 +32,7 @@ if (!empty($_SESSION['user']))
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light w-100 ">
-  <a class="navbar-brand" href="index.php">MY LIBRARY</a>
+  <a class="navbar-brand" href="index.php" style="position: relative; z-index: 0">MY LIBRARY</a>
   <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>

@@ -2,6 +2,8 @@
 include("template/header.php")
 ?>
 
+<div id="particles-js">
+
 <form class="add_book" id="FormInfo" action="book_form.php" method="post">
   <div class="form-row">
     <div class="select-category">
@@ -44,6 +46,8 @@ include("template/header.php")
             <button name="add_book" type="submit" class="btn btn-primary">Add book</button>
         </form>
 
+    </div>
+    
    <?php
     include("template/footer.php")
     ?>

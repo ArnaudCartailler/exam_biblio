@@ -2,8 +2,10 @@
 include("template/header.php")
 ?>
 
+<div id="particles-js">
 
-<div class="container-fluid mt-5 w-50">
+
+<div class="container-fluid sign-up-form mt-5 w-50">
   <form action="signup.php" method="post">
     <div class="form-group">
         <label for="inputUsername">Username</label>
@@ -26,6 +28,7 @@ include("template/header.php")
     <a class="account" href="login.php" >Already an account ? Click here !</a>
 </div>
 
+</div>
 
  <?php
 include("template/footer.php")
