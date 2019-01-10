@@ -228,6 +228,12 @@ textarea {
                  transform: rotate(359deg);
              }
          }
+
+    .detail li {
+        list-style-type: none;
+        margin-bottom: 10px;
+    }
+
 /* #####################################################################
 /* ##########################   SMARTPHONE   ########################### */
 /* ##################################################################### */
@@ -241,6 +247,7 @@ textarea {
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
 
+    
     
 }
 
@@ -304,15 +311,47 @@ textarea {
            margin: 30px;
        }
 
-       .add_book button {
+       .add_book button 
+       {
            margin: 30px;
        }
+
+       .list-unstyled
+       {
+           border : 1px solid grey;
+           padding : 10px;
+           border-radius: 5px;
+           box-shadow: 1px 5px 5px lightgrey;
+       }
+
+       .list-unstyled li
+       {
+           margin-bottom: 5px;
+       }
+
+        .list-unstyled .btn-danger, .btn-info
+        {
+            transition: 0.5s;
+        }
+
+       .list-unstyled .btn-danger:hover
+       {
+           transition : 0.5s;
+           transform: scale(1.2);
+       }
+
+        .list-unstyled .btn-info:hover {
+            transition: 0.5s;
+            transform: scale(1.2);
+        }
 
 /* ##################################################################### */
 /* ########################   LARGE DESKTOPS   ######################### */
 /* ##################################################################### */
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
+
+
 
 }
 
@@ -485,5 +524,6 @@ textarea {
     h2,
     h3 {
         page-break-after: avoid;
+    }
     }
 }

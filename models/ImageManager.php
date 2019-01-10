@@ -48,10 +48,9 @@ class ImageManager
      */
     public function add(Image $image)
     {
-        $query = $this->getDb()->prepare('INSERT INTO images(source, alt, id_books) VALUES (:source, :alt, :date, :id_books)');
+        $query = $this->getDb()->prepare('INSERT INTO images(source, alt) VALUES (:source, :alt)');
         $query->bindValue("source", $image->getSource(), PDO::PARAM_STR);
         $query->bindValue("alt", $image->getAlt(), PDO::PARAM_STR);
-        $query->bindValue("id_books", $image->getIdbook(), PDO::PARAM_INT);
         $query->execute();
     }
 

@@ -26,8 +26,8 @@ session_start();
 
 $BookManager = new BookManager($db);
 $CategoryManager = new CategoryManager($db);
-$ImageManager = new ImageManager($db);
 $AdminManager = new AdminManager($db);
+$ImageManager = new ImageManager($db);
 
 if(empty($_SESSION['user'])){
 
@@ -43,6 +43,24 @@ if(empty($_SESSION['user'])){
     exit();
 }
 
+if(isset($_POST['delete'])) {
+
+    if (isset($_POST['id']) && !empty($_POST['id'])) {
+        
+        $id = (int)$_POST['id'];
+        
+		// On le supprime en BDD
+        $BookManager->delete($id);
+
+    } else {
+
+        $error_message = "Choose a book to delete";
+    }
+}
+
 $books = $BookManager->getBooks();
+$categories = $CategoryManager->getCategories();
+$images = $ImageManager->getImages();
+
 
 include "../views/indexVue.php";

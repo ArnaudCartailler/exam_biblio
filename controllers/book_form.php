@@ -22,24 +22,21 @@ session_start();
 
 $BookManager = new BookManager($db);
 $CategoryManager = new CategoryManager($db);
-$ImageManager = new ImageManager($db);
 $AdminManager = new AdminManager($db);
 
 if (isset($_POST['add_book'])) {
-
-    if (!empty($_POST['category'])) {
-        $category = htmlspecialchars($_POST['category']);
     
+    if (!empty($_POST['category'])) {
+        
+        $category = htmlspecialchars($_POST['category']);
+        
         if (!empty($_POST['title'])) {
-            $title = htmlspecialchars($_POST['title']);
 
+            $title = htmlspecialchars($_POST['title']);
+            
             if (!empty($_POST['author'])) {
                 $author = htmlspecialchars($_POST['author']);
-
-                if (!empty($_POST['date'])) {
-
-                    $date = htmlspecialchars($_POST['date']);
-
+                
                     if ($_POST['summary']) {
 
                     $summary = htmlspecialchars($_POST['summary']);
@@ -50,10 +47,10 @@ if (isset($_POST['add_book'])) {
                         'category' => $category,
                         'title' => $title,
                         'author' => $author,
-                        'date' => $date,
+                        'date' => $_POST['date'],
                         'summary' => $summary,
                         'available' => 1,
-                        'id_users' => 0,
+                        'idCategories' => $category,
                     ]);
 
                     $addBook = $BookManager->add($newBook);
@@ -70,7 +67,7 @@ if (isset($_POST['add_book'])) {
             echo "Enter a valid summary";
         }
     }
-}
+
 }
 
 $categories = $CategoryManager->getCategories();

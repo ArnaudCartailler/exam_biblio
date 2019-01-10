@@ -2,7 +2,7 @@
 include("template/header.php")
 ?>
 
-<form class="add_book" id="FormInfo" action="index.php" method="post">
+<form class="add_book" id="FormInfo" action="book_form.php" method="post">
   <div class="form-row">
     <div class="select-category">
       <label for="inlineFormCustomSelect">Category</label>
@@ -14,7 +14,7 @@ include("template/header.php")
                             foreach ($categories as $category) 
                             {
                         ?>
-                            <option value="<?php echo $category->getName(); ?>"><?php echo $category->getName(); ?></option>
+                            <option value="<?php echo $category->getId(); ?>"><?php echo $category->getName(); ?></option>
                         <?php 
             }
             ?>

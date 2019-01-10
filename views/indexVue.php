@@ -2,6 +2,15 @@
   include("template/header.php")
   ?>
 
+	<?php
+if (isset($error_message)) {
+  ?>
+		<p class="error-message"> <?php echo $error_message; ?></p>
+	<?php
+
+}
+?>
+
 <div class="container-fluid my-5">
   <div class="row">
 
@@ -18,12 +27,15 @@
   {
     ?>
 
-    <ul class="list-unstyled m-5">
+    <ul class="list-unstyled m-5" data-aos="flip-left">
       <li>Title: <?php echo $book->getTitle(); ?></li>
       <li>Author: <?php echo $book->getAuthor(); ?></li>
-      <li>Available: <?php echo $book->getAvailable(); ?></li>
-      <li><a class="btn btn-info mb-2" href="details.php?id=<?php echo $book->getId(); ?>">Details</a></li>
-      <li><a class="btn btn-danger" href="index.php?remove=<?php echo $book->getId(); ?>">Delete</a></li>
+      <li>Date: <?php echo $book->getDate(); ?></li>
+      <li><a class="btn btn-info mb-2" href="book_detail.php?id=<?php echo $book->getId(); ?>">Details</a></li>
+      <form class="delete" action="index.php" method="post">
+				<input type="hidden" name="id" value="<?php echo $book->getId(); ?>"  required>
+				<input class="btn btn-danger" type="submit" name="delete" value="Delete">
+			</form>
 
     </ul>
 

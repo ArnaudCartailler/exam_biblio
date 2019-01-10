@@ -11,14 +11,7 @@ class Book
 			  $date,
 			  $summary,
 			  $available,
-			  $id_user,
-			  $id_categories,
-			  $id_images;
-
-	const available = [
-		0 => 'No',
-		1 => 'Yes'
-	];
+			  $idCategories;
 
 	/**
 	 * Constructor
@@ -62,8 +55,8 @@ class Book
 	 */
 	public function setId($id)
 	{
-		$id = (int) $id;
-		if($id > 0){
+		$id = (int)$id;
+		if ($id > 0) {
 			$this->id = $id;
 		}
 		return $this;
@@ -77,7 +70,7 @@ class Book
 	 */
 	public function setTitle(string $title)
 	{
-		if (in_array($title))
+		if (is_string($title))
 		{
 			$this->title = $title;
 		}
@@ -92,22 +85,22 @@ class Book
 	 */
 	public function setAuthor(string $author)
 	{
-		if (in_array($author)) {
+		if (is_string($author)) {
 			$this->author = $author;
 		}
 		return $this;
 	}
 
 	/**
-	 * Set the value of $date
+	 * set value of adate
 	 *
-	 * @param \DateTimeInterface $date
+	 * @param string $apparution
 	 * @return self
 	 */
-	public function setDate(\DateTimeInterface $date)
+	public function setDate(string $date)
 	{
 		$this->date = $date;
-
+		
 		return $this;
 	}
 
@@ -119,7 +112,7 @@ class Book
 	 */
 	public function setSummary(string $summary)
 	{
-		if (in_array($summary)) {
+		if (is_string($summary)) {
 			$this->summary = $summary;
 		}
 		return $this;
@@ -131,61 +124,29 @@ class Book
 	 * @param int $available
 	 * @return self
 	 */
-	public function setAvailable(int $available)
+	public function setAvailable($available)
 	{
-		$this->available = $available;
-
-		return $this;
-	}
-
-	/**
-	 * Set the value of $id_user
-	 *
-	 * @param integer $id_user
-	 * @return self
-	 */
-	public function setIduser($id_user)
-	{
-		$id_user = (int)$id_user;
-		if ($id_user > 0) {
-			$this->id_user = $id_user;
+		$available= (int)$available;
+		if ($available > 0) {
+			$this->available = $available;
 		}
 		return $this;
 	}
 
 	/**
-	 * Set the value of $id_categories
+	 * Set the value of $idCategories
 	 *
-	 * @param integer $id_categories
+	 * @param integer $idCategories
 	 * @return self
 	 */
-	public function setIdcategories($id_categories)
+	public function setIdCategories($idCategories)
 	{
-		$id_categories = (int)$id_categories;
-		if ($id_categories > 0) {
-			$this->id_categories = $id_categories;
+		$idCategories = (int)$idCategories;
+		if ($idCategories > 0) {
+			$this->idCategories = $idCategories;
 		}
 		return $this;
 	}
-
-	/**
-	 * Set the value of $id_images
-	 *
-	 * @param integer $id_images
-	 * @return self
-	 */
-	public function setIdimages($id_images)
-	{
-		$id_images = (int)$id_images;
-		if ($id_images > 0) {
-			$this->id_images = $id_images;
-		}
-		return $this;
-	}
-
-
-
-
 
 	//////////////////    GETTERS    //////////////////
 
@@ -222,9 +183,9 @@ class Book
 	/**
 	 * Get the value of $date
 	 *
-	 * @return \DateTimeInterface|null
+	 * @return date
 	 */
-	public function getDate() : ? \DateTimeInterface
+	public function getDate()
 	{
 		return $this->date;
 	}
@@ -252,38 +213,15 @@ class Book
 	}
 
 	/**
-	 * Get the value of $id_user
+	 * Get the value of $idCategories
 	 *
-	 * @return $id_user
+	 * @return $idCategories
 	 */
-	public function getIduser()
+	public function getIdCategories()
 	{
 
-		return $this->id_user;
+		return $this->idCategories;
 
 	}
 
-	/**
-	 * Get the value of $id_categories
-	 *
-	 * @return $id_categories
-	 */
-	public function getIdcategories()
-	{
-
-		return $this->id_categories;
-
-	}
-
-	/**
-	 * Get the value of $id_images
-	 *
-	 * @return $id_images
-	 */
-	public function getIdimages()
-	{
-
-		return $this->id_images;
-
-	}
 }

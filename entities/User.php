@@ -103,6 +103,33 @@ class User
         return $this;
     }
 
+    /**
+     * Set numbers of borrowed books
+     *
+     * @param int $borrowed
+     * @return void
+     */
+    public function setBorrowed($borrowed)
+    {
+        $borrowed = (int)$borrowed;
+        $this->borrowed = $borrowed;
+        return $this->borrowed;
+    }
+
+    /**
+     * Set the value of $listing
+     *
+     * @param string $listing
+     * @return self
+     */
+    public function setListing(string $listing)
+    {
+        if (is_string($listing)) {
+            $this->listing = $listing;
+        }
+        return $this;
+    }
+
 	//////////////////    GETTERS    //////////////////
 
     /**
@@ -145,6 +172,27 @@ class User
     {
         return $this->identifiant;
     }
+
+    /**
+     * Get the value of $borrowed
+     *
+     * @return $borrowed
+     */
+    public function getBorrowed()
+    {
+        return $this->borrowed;
+    }
+
+    /**
+     * Get the value of $listing
+     *
+     * @return $listing
+     */
+    public function getListing()
+    {
+        return $this->listing;
+    }
+
 
 
 
