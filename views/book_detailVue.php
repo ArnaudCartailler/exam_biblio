@@ -8,6 +8,7 @@ include("template/header.php")
   <div class="row">
 
         <ul class="mt-5 detail">
+            <li><img src="../assets/img/<?php echo $book->getImage(); ?>" height="150"></li>
             <li>Title: <?php echo $book->getTitle(); ?></li>
             <li>Author: <?php echo $book->getAuthor(); ?></li>
             <li>Date: <?php echo $book->getDate(); ?></li>
@@ -20,7 +21,7 @@ include("template/header.php")
 
 <form class="user_book" id="FormInfo" action="book_detail.php" method="post">
 
-    <div class="select-category ml-5">
+    <div class="select-category col-6">
                 <select class="user" name="user" required>
                             <option value="" disabled>Choose the user</option>
                             
@@ -58,7 +59,7 @@ include("template/header.php")
                     </select>
     </div>
   </div>
-        <div class="form-row">
+        <div class="form-row update-book">
             <div class="form-group">
                 <label for="inputtext">Title</label>
                 <input type="text" class="form-control" name="title" id="title" placeholder="Title" required />
@@ -78,9 +79,12 @@ include("template/header.php")
                 <textarea class="form-control" id="summary" name="summary" placeholder="Summary" required /></textarea>
             </div>
         </div>
-            <button name="update_book" type="submit" class="btn btn-primary">Update book</button>
-            <input class="btn btn-danger" type="submit" name="delete" value="Delete">
-
+        <div class="form-group">
+           <label for="inputtext">Image</label>
+           <input type="file" name="image" id="" placeholder="Picture" required />
+       </div>
+        <button name="update_book" type="submit" class="btn btn-primary">Update book</button>
+        <input class="btn btn-danger" type="submit" name="delete" value="Delete">
         </form>
 
 </div>

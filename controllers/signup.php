@@ -18,9 +18,6 @@ spl_autoload_register('chargerClasse');
 
 $db = Database::DB();
 
-$bytes = random_bytes(4);
-$token = bin2hex($bytes);
-
 if (isset($_POST['new'])) 
 {
     if (!empty($_POST['username'])) 

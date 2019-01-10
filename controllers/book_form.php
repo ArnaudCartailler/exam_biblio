@@ -36,39 +36,46 @@ if (isset($_POST['add_book'])) {
             
             if (!empty($_POST['author'])) {
                 $author = htmlspecialchars($_POST['author']);
-                
-                    if ($_POST['summary']) {
 
+                if ($_POST['summary']) {
+                    
                     $summary = htmlspecialchars($_POST['summary']);
 
-                    $BookManager = new BookManager($db);
+                    if (isset($_FILES['image'])) {
 
-                    $newBook = new Book([
-                        'category' => $category,
-                        'title' => $title,
-                        'author' => $author,
-                        'date' => $_POST['date'],
-                        'summary' => $summary,
-                        'available' => 1,
-                        'idCategories' => $category,
-                    ]);
+                        $image = $_FILES['image']['name'];
+                        
+                        $BookManager = new BookManager($db);
 
-                    $addBook = $BookManager->add($newBook);
+                            $newBook = new Book([
+                                'category' => $category,
+                                'title' => $title,
+                                'author' => $author,
+                                'date' => $_POST['date'],
+                                'summary' => $summary,
+                                'available' => 1,
+                                'idCategories' => $category,
+                                'image' => $image,
+                            ]);
 
-                    header('location: index.php');
+                        $addBook = $BookManager->add($newBook);
 
+                        header('location: index.php');
+
+                    } else {
+                        echo "Enter a correct title";
+                    }
                 } else {
-                    echo "Enter a correct title";
+                    echo 'Enter a valid author';
                 }
             } else {
-                echo 'Enter a valid author';
+                echo "Enter a valid summary";
             }
-        } else {
-            echo "Enter a valid summary";
         }
     }
-
 }
+
+
 
 $categories = $CategoryManager->getCategories();
 

@@ -4,7 +4,7 @@ include("template/header.php")
 
 <div id="particles-js">
 
-<form class="add_book" id="FormInfo" action="book_form.php" method="post">
+<form class="add_book" id="FormInfo" action="book_form.php" method="post" enctype="multipart/form-data">
   <div class="form-row">
     <div class="select-category">
       <label for="inlineFormCustomSelect">Category</label>
@@ -41,6 +41,10 @@ include("template/header.php")
             <div class="form-group">
                 <label for="inputtext">Summary</label>
                 <textarea class="form-control" id="summary" name="summary" placeholder="Summary" required /></textarea>
+            </div>
+              <div class="form-group">
+                <label for="inputtext">Image</label>
+                <input type="file" name="image" id="" placeholder="Picture" required />
             </div>
         </div>
             <button name="add_book" type="submit" class="btn btn-primary">Add book</button>

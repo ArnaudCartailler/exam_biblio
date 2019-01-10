@@ -172,6 +172,12 @@ textarea {
 
         }
 
+         .user_book, .add_book, .update-book 
+         {
+             position: relative;
+             z-index: 100000 !important;
+         }
+
         .container-fluid .navbar a{
             color : white!important;
         }
@@ -339,7 +345,7 @@ textarea {
 
        }
 
-       .detail-book, .user_book
+       .user_book
        {
            position : relative;
            z-index: 100000 !important;

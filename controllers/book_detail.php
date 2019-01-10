@@ -23,7 +23,6 @@ session_start();
 $BookManager = new BookManager($db);
 $CategoryManager = new CategoryManager($db);
 $AdminManager = new AdminManager($db);
-$ImageManager = new ImageManager($db);
 
 if (isset($_GET['id'])) {
 

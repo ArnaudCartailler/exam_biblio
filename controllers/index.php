@@ -27,7 +27,6 @@ session_start();
 $BookManager = new BookManager($db);
 $CategoryManager = new CategoryManager($db);
 $AdminManager = new AdminManager($db);
-$ImageManager = new ImageManager($db);
 
 if(empty($_SESSION['user'])){
 
@@ -60,7 +59,6 @@ if(isset($_POST['delete'])) {
 
 $books = $BookManager->getBooks();
 $categories = $CategoryManager->getCategories();
-$images = $ImageManager->getImages();
 
 
 include "../views/indexVue.php";

@@ -11,7 +11,8 @@ class Book
 			  $date,
 			  $summary,
 			  $available,
-			  $idCategories;
+			  $idCategories,
+			  $image;
 
 	/**
 	 * Constructor
@@ -148,6 +149,20 @@ class Book
 		return $this;
 	}
 
+	/**
+	 * Set the value of $image
+	 *
+	 * @param string $image
+	 * @return self
+	 */
+	public function setImage(string $image)
+	{
+		if (is_string($image)) {
+			$this->image = $image;
+		}
+		return $this;
+	}
+
 	//////////////////    GETTERS    //////////////////
 
 	/**
@@ -224,4 +239,15 @@ class Book
 
 	}
 
+	/**
+	 * Get the value of $image
+	 *
+	 * @return $image
+	 */
+	public function getImage()
+	{
+
+		return $this->image;
+
+	}
 }
