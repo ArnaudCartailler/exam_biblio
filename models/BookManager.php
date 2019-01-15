@@ -87,7 +87,7 @@ class BookManager
      * @param integer $id
      * @return Book
      */
-    public function getBook(int $id)
+    public function getBook($id)
     {
         $id = (int)$id;
         $query = $this->getDb()->prepare('SELECT * FROM books WHERE id = :id');
@@ -105,14 +105,15 @@ class BookManager
      */
     public function update(Book $book)
     {
-        $query = $this->getDb()->prepare('UPDATE books SET title = :title, author = :author, date = :date, summary = :summary, available = :available, image = :image WHERE id = :id');
+        $query = $this->getDb()->prepare('UPDATE books SET title = :title, author = :author, date = :date, summary = :summary, id_categories = :id_categories, available = :available, image = :image WHERE id = :id');
         $query->bindValue("title", $book->getTitle(), PDO::PARAM_STR);
         $query->bindValue("author", $book->getAuthor(), PDO::PARAM_STR);
         $query->bindValue("date", $book->getDate(), PDO::PARAM_STR);
         $query->bindValue("summary", $book->getSummary(), PDO::PARAM_STR);
         $query->bindValue("available", $book->getAvailable(), PDO::PARAM_INT);
+        $query->bindValue("id_categories", $book->getIdCategories(), PDO::PARAM_INT);
         $query->bindValue("image", $book->getImage(), PDO::PARAM_STR);
-        $query->bindValue("id", $account->getId(), PDO::PARAM_INT);
+        $query->bindValue("id", $book->getId(), PDO::PARAM_INT);
         $query->execute();
     }
 

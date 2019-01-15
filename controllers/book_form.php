@@ -41,7 +41,7 @@ if (isset($_POST['add_book'])) {
                     
                     $summary = htmlspecialchars($_POST['summary']);
 
-                    if (isset($_FILES['image'])) {
+                    if (!empty($_FILES['image'])) {
 
                         $image = $_FILES['image']['name'];
                         
@@ -62,9 +62,9 @@ if (isset($_POST['add_book'])) {
 
                         header('location: index.php');
 
-                    } else {
-                        echo "Enter a correct title";
-                    }
+                    } else{
+                        echo 'Something goes wrong';
+                }
                 } else {
                     echo 'Enter a valid author';
                 }
@@ -74,7 +74,6 @@ if (isset($_POST['add_book'])) {
         }
     }
 }
-
 
 
 $categories = $CategoryManager->getCategories();

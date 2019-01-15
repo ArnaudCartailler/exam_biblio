@@ -295,12 +295,35 @@ textarea {
         margin-bottom: 10px;
     }
 
+    .user_book{
+        width : 50%;
+        margin : 2%;
+        margin-left : 30%;
+        padding : 10px;
+        border-radius : 5px;
+        background-color : rgba(255, 255, 255, 0.8);
+    }
+
+    .delete-detail{
+        width : 100%;
+        margin-left : 30%;
+    }
 /* #####################################################################
 /* ##########################   SMARTPHONE   ########################### */
 /* ##################################################################### */
 /* Extra small devices (phones, less than 768px) */
+    @media (min-width: 310px) {
 
+         .add_book {
+             position: relative;
+             z-index: 100000 !important;
+             width: 70%;
+             margin-left: 30%;
+             margin-top: 50px;
+             text-align: center;
 
+         }
+    }
 
 /* ##################################################################### */
 /* ############################   TABLETS   ############################ */
@@ -308,7 +331,7 @@ textarea {
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
 
-   
+     
     
 }
 
@@ -355,8 +378,10 @@ textarea {
        {
         position : relative;
         z-index: 100000 !important;
+        width : 70%;
+        margin-left : 30%;
         margin-top : 50px;
-        margin-left: 30%;
+        text-align : center;
 
        }
 

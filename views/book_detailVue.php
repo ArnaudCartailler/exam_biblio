@@ -19,7 +19,7 @@ include("template/header.php")
    </div>
 </div>
 
-<form class="user_book" id="FormInfo" action="book_detail.php" method="post">
+<form class="index-book w-100" id="FormInfo" action="book_detail.php" method="post">
 
     <div class="select-category col-6">
                 <select class="user" name="user" required>
@@ -29,21 +29,20 @@ include("template/header.php")
                             // Je boucle sur tous les différents comptes possible à créer
                             foreach ($users as $user) {
                                 ?>
-                                <option value="<?php echo $user->getId(); ?>"><?php echo $user->getName(); ?></option>
+                                <option value="<?php echo $user->getId(); ?>"><?php echo $user->getFirstname(); ?></option>
                             <?php 
                         }
                         ?>
                         </select>
 
-        <button name="user_book" type="submit" class="btn btn-primary ml-5">User</button>
+        <button name="user_borrow" type="submit" class="btn btn-primary ml-5">User</button>
         <button name="user_return" type="submit" class="btn btn-primary ml-5">Returned</button>
     </div>
 
 </form>
 
-<form class="add_book" id="FormInfo" action="book_form.php" method="post">
-  <div class="form-row">
-    <div class="select-category">
+<form class="user_book" action="book_detail.php" method="post" enctype="multipart/form-data">
+     <div class="select-category">
       <label for="inlineFormCustomSelect">Category</label>
             <select class="category" name="category" required>
                         <option value="" disabled>Choose the category</option>
@@ -58,34 +57,38 @@ include("template/header.php")
                     ?>
                     </select>
     </div>
-  </div>
-        <div class="form-row update-book">
-            <div class="form-group">
+    <div class="form-row ml-5 m-2 w-50">
+        <div class="form-group">
                 <label for="inputtext">Title</label>
                 <input type="text" class="form-control" name="title" id="title" placeholder="Title" required />
             </div>
-            <div class="form-group">
-                <label for="inputtext">Author</label>
-                <input type="text" class="form-control" name="author" id="name" placeholder="Author" required />
-            </div>
+        <div class="form-group col-md-6">
+            <label for="inputtext">Author</label>
+            <input type="text" class="form-control" name="author" id="author" placeholder="Author" required />
         </div>
-        <div class="form-row">
-            <div class="form-group">
-                <label for="inputtext">Date</label>
-                <input type="date" class="form-control" id="date" name="date" placeholder="Date" required />
-            </div>
-            <div class="form-group">
-                <label for="inputtext">Summary</label>
-                <textarea class="form-control" id="summary" name="summary" placeholder="Summary" required /></textarea>
-            </div>
+    </div>
+    <div class="form-row ml-5 m-2  w-50">
+        <div class="form-group col-md-6">
+            <label for="inputtext">Date</label>
+            <input type="date" class="form-control" id="date" name="date" placeholder="Date" required />
         </div>
-        <div class="form-group">
-           <label for="inputtext">Image</label>
-           <input type="file" name="image" id="" placeholder="Picture" required />
-       </div>
-        <button name="update_book" type="submit" class="btn btn-primary">Update book</button>
-        <input class="btn btn-danger" type="submit" name="delete" value="Delete">
-        </form>
+        <div class="form-group col-md-6">
+            <label for="inputtext">Summary</label>
+            <textarea class="form-control" id="summary" name="summary" placeholder="Summary" required /></textarea>
+        </div>
+         <div class="form-group">
+                <label for="inputtext">Image</label>
+                <input type="file" name="image" id="" placeholder="Picture" required />
+            </div>
+         <input type="hidden" name="id" value="<?php echo $book->getId(); ?>">
+    </div>
+        <button type="submit" class="btn btn-primary" name="update">Modify</button>
+    </form>
+            <form class="delete" action="book_detail.php" method="post">
+               <input type="hidden" name="id" value="<?php echo $book->getId(); ?>"  required>
+               <input class="btn btn-danger" type="submit" name="delete" value="Delete">
+           </form>
+
 
 </div>
 

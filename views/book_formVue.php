@@ -44,7 +44,7 @@ include("template/header.php")
             </div>
               <div class="form-group">
                 <label for="inputtext">Image</label>
-                <input type="file" name="image" id="" placeholder="Picture" required />
+                <input type="file" name="image" id="" placeholder="Picture" />
             </div>
         </div>
             <button name="add_book" type="submit" class="btn btn-primary">Add book</button>

@@ -4,7 +4,7 @@ declare (strict_types = 1);
 /**
  *  Classe permettant de gérer les opérations en base de données concernant les objets Account
  */
-class userManager
+class UserManager
 {
 
     private $_db;
@@ -46,7 +46,7 @@ class userManager
      *
      * @param users $user
      */
-    public function addUser(User $user)
+    public function add(User $user)
     {
         $query = $this->getDb()->prepare('INSERT INTO users(firstname, lastname, identifiant, borrowed, listing) VALUES ( :firstname, :lastname, :identifiant, :borrowed, :listing)');
         $query->bindValue("firstname", $user->getFirstname(), PDO::PARAM_STR);
@@ -79,13 +79,13 @@ class userManager
 
 
     /**
-     * Get all userss
+     * Get all users
      *
      */
     public function getUsers()
     {
 
-        $arrayOfuserss = [];
+        $arrayOfUsers = [];
         $query = $this->getDb()->query('SELECT * FROM users');
 
 		// On récupère un tableau contenant plusieurs tableaux associatifs
@@ -94,25 +94,26 @@ class userManager
 		// A chaque tour de boucle, on récupère un tableau associatif concernant un seul compte
         foreach ($dataUsers as $dataUser) {
 			// On crée un nouvel objet grâce au tableau associatif, qu'on stocke dans $arrayOfAccounts
-            $arrayOfUsers[] = new users($dataUser);
+            $arrayOfUsers[] = new User($dataUser);
         }
-        return $arrayOfusers;
+        return $arrayOfUsers;
     }
 
     /**
-     * Get a users by id
+     * Get a user by id
      *
      * @param integer $id
-     * @return users
+     * @return User
      */
-    public function getUser(string $identifiant)
+    public function getUser($id)
     {
-        $query = $this->getDb()->prepare('SELECT * FROM users WHERE identifiant = :identifiant');
-        $query->bindValue("identifiant", $identifiant, PDO::PARAM_STR);
+        $id = (int)$id;
+        $query = $this->getDb()->prepare('SELECT * FROM users WHERE id = :id');
+        $query->bindValue("id", $id, PDO::PARAM_INT);
         $query->execute();
 
-        $dataUser = $query->fetch(PDO::FETCH_ASSOC);
-        return new User($dataUser);
+        $userBook = $query->fetch(PDO::FETCH_ASSOC);
+        return new User($userBook);
     }
 
     /**
@@ -122,12 +123,9 @@ class userManager
      */
     public function update(User $user)
     {
-        $query = $this->getDb()->prepare('UPDATE users SET identification = :identification, firstname = :firstname, lastname = :lastname, borrowed = :borrowed, listing = :listing WHERE id = :id');
-        $query->bindValue("identification", $user->getIdentification(), PDO::PARAM_STR);
+        $query = $this->getDb()->prepare('UPDATE users SET firstname = :firstname, lastname = :lastname WHERE id = :id');
         $query->bindValue("firstname", $user->getFirstname(), PDO::PARAM_STR);
         $query->bindValue("lastname", $user->getLastname(), PDO::PARAM_STR);
-        $query->bindValue("borrowed", $user->getBorrowed(), PDO::PARAM_INT);
-        $query->bindValue("listing", $user->getListing(), PDO::PARAM_STR);
         $query->bindValue("id", $user->getId(), PDO::PARAM_INT);
         $query->execute();
     }
@@ -139,7 +137,7 @@ class userManager
      */
     public function delete(int $id)
     {
-        $query = $this->getDb()->prepare('DELETE * FROM users WHERE id = :id');
+        $query = $this->getDb()->prepare('DELETE FROM users WHERE id = :id');
         $query->bindValue("id", $id, PDO::PARAM_INT);
         $query->execute();
     }
