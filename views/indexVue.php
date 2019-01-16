@@ -30,7 +30,7 @@ if (isset($error_message)) {
   {
     ?>
 
-<ul class="list-unstyled m-auto index-book text-center" data-aos="flip-left">
+<ul class="list-unstyled m-auto index-book text-center" data-aos="fade-right">
 
     <li><img src="../assets/img/<?php echo $book->getImage(); ?>" height="150"></li>
     <li>Title: <?php echo $book->getTitle(); ?></li>

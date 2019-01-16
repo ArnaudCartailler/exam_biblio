@@ -31,7 +31,7 @@ if (!empty($_SESSION['user']))
             //If the user is in the database and he is an admin he see this 
 ?>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light w-100 ">
+<nav class="navbar navbar-expand-lg navbar-light bg-light w-100">
   <a class="navbar-brand" href="index.php" style="position: relative; z-index: 0">MY LIBRARY</a>
   <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>

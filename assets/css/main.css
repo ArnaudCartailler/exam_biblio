@@ -103,17 +103,19 @@ textarea {
     }
 
     /**
-    About background effect
+    About background effect and z-index
     */
 
-    canvas {
+    canvas 
+    {
         position : absolute;
         top:0;
         display: block;
         vertical-align: bottom;
     }
 
-        #particles-js {
+        #particles-js 
+        {
         position: absolute;
         right: 0;
         width: 100%;
@@ -137,24 +139,40 @@ textarea {
               position: relative;
         }
 
+         .container-login 
+         {
+             position: relative;
+             z-index: 2;
+             top: 100px;
+         }
+
+          .container-index, .index-book 
+          {
+              position: relative;
+              z-index: 100000 !important;
+              background-color: rgba(255, 255, 255, 0.8);
+              border: none;
+          }
+
+            .user_book, .add_book, .update-book 
+         {
+             position: relative;
+             z-index: 100000 !important;
+             
+         }
+
+             .add
+        {
+            z-index: 100000 !important;
+            position: relative;
+         }
+
     /**
     All for the header + nav bar
     */
 
-        .container-login{
-            position: relative;
-            z-index: 2;
-            top : 100px;
-        }
-
-        .container-index, .index-book
-        {
-            position : relative;
-            z-index: 100000 !important;
-            background-color : rgba(255, 255, 255, 0.8);
-            border: none;
-        }
-
+    
+ 
         .container-fluid .index 
         {
             width: 100%;
@@ -164,19 +182,13 @@ textarea {
             color: white;
             background-color: #252627;
             box-shadow: 1px 2px 5px lightgrey;
-        }
+        } 
 
         .container-fluid .navbar{
              background-color: #252627!important;
             box-shadow: 1px 2px 5px lightgrey;
 
         }
-
-         .user_book, .add_book, .update-book 
-         {
-             position: relative;
-             z-index: 100000 !important;
-         }
 
         .container-fluid .navbar a{
             color : white!important;
@@ -217,13 +229,10 @@ textarea {
          }
 
          /**
-         Effect on the add button
+         Effect on the add button on index / user
          */
 
-         .add{
-            z-index: 100000 !important;
-            position: relative;
-         }
+     
          .add a i {
              text-align: center;
              font-size: 300%;
@@ -290,164 +299,97 @@ textarea {
              }
          }
 
-    .detail li {
+    .detail li 
+    {
         list-style-type: none;
         margin-bottom: 10px;
     }
 
-    .user_book{
-        width : 50%;
-        margin : 2%;
-        margin-left : 30%;
-        padding : 10px;
-        border-radius : 5px;
-        background-color : rgba(255, 255, 255, 0.8);
-    }
-
-    .delete-detail{
-        width : 100%;
-        margin-left : 30%;
-    }
-/* #####################################################################
-/* ##########################   SMARTPHONE   ########################### */
-/* ##################################################################### */
-/* Extra small devices (phones, less than 768px) */
-    @media (min-width: 310px) {
-
-         .add_book {
-             position: relative;
-             z-index: 100000 !important;
-             width: 70%;
-             margin-left: 30%;
-             margin-top: 50px;
-             text-align: center;
-
-         }
-    }
-
-/* ##################################################################### */
-/* ############################   TABLETS   ############################ */
-/* ##################################################################### */
-/* Small devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-
-     
-    
-}
-
-/* ##################################################################### */
-/* ############################   DESKTOPS   ########################### */
-/* ##################################################################### */
-/* Medium devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-
-    .container-fluid form button
-    {
-        background-color : #252627;
-        border : none;
-        margin-bottom : 10px;
+    .container-fluid form button {
+        background-color: #252627;
+        border: none;
+        margin-bottom: 10px;
     }
 
     .container-fluid form button:hover {
-            transition : 0.5s;
-            transform: scale(1.2);
-            box-shadow: 5px 5px 5px lightgrey;
+        transition: 0.5s;
+        transform: scale(1.2);
+        box-shadow: 5px 5px 5px lightgrey;
     }
 
-     .container-fluid .account  
-     {
-         text-decoration: underline;
-         transition : 0.5s;
-     }
+    .container-fluid .account {
+        text-decoration: underline;
+        transition: 0.5s;
+    }
 
-       .container-fluid .account:hover 
-       {
-           transition : 0.5s;
-           text-decoration: underline;
-           color: red;
+    .container-fluid .account:hover {
+        transition: 0.5s;
+        text-decoration: underline;
+        color: red;
 
-       }
+    }
 
-       .user_book
-       {
-           position : relative;
-           z-index: 100000 !important;
-       }
-       
-       .add_book
-       {
-        position : relative;
+    .user_book {
+        position: relative;
         z-index: 100000 !important;
-        width : 70%;
-        margin-left : 30%;
-        margin-top : 50px;
-        text-align : center;
+    }
 
-       }
+    .add_book {
+        position: relative;
+        z-index: 100000 !important;
+        width: 70%;
+        margin-left: 30%;
+        margin-top: 50px;
+        text-align: center;
 
-       .category
-       {
-           border: 1px solid lightgrey;
-           border-radius: 3px;
-           background-color: white;
-           text-align: center;
-           padding : 5px;
-       }
+    }
 
-       .add_book .select-category 
-       {
-           margin-left: 30px;
-       }
+    .category {
+        border: 1px solid lightgrey;
+        border-radius: 3px;
+        background-color: white;
+        text-align: center;
+        padding: 5px;
+    }
 
-
-       .add_book .form-group
-       {
-           margin: 30px;
-       }
-
-       .add_book button 
-       {
-           margin: 30px;
-       }
-
-       .list-unstyled
-       {
-           border : 1px solid grey;
-           padding : 10px;
-           border-radius: 5px;
-           box-shadow: 1px 5px 5px lightgrey;
-       }
-
-       .list-unstyled li
-       {
-           margin-bottom: 5px;
-       }
-
-        .list-unstyled .btn-danger, .btn-info
-        {
-            transition: 0.5s;
-        }
-
-       .list-unstyled .btn-danger:hover
-       {
-           transition : 0.5s;
-           transform: scale(1.2);
-       }
-
-        .list-unstyled .btn-info:hover {
-            transition: 0.5s;
-            transform: scale(1.2);
-        }
-
-/* ##################################################################### */
-/* ########################   LARGE DESKTOPS   ######################### */
-/* ##################################################################### */
-/* Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
+    .add_book .select-category {
+        margin-left: 30px;
+    }
 
 
+    .add_book .form-group {
+        margin: 30px;
+    }
 
-}
+    .add_book button {
+        margin: 30px;
+    }
+
+    .list-unstyled {
+        border: 1px solid grey;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 1px 5px 5px lightgrey;
+    }
+
+    .list-unstyled li {
+        margin-bottom: 5px;
+    }
+
+    .list-unstyled .btn-danger,
+    .btn-info {
+        transition: 0.5s;
+    }
+
+    .list-unstyled .btn-danger:hover {
+        transition: 0.5s;
+        transform: scale(1.2);
+    }
+
+    .list-unstyled .btn-info:hover {
+        transition: 0.5s;
+        transform: scale(1.2);
+    }
 
 
 
@@ -620,4 +562,3 @@ textarea {
         page-break-after: avoid;
     }
     }
-}

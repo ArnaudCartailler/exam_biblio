@@ -13,16 +13,16 @@ include("template/header.php")
             <li>Author: <?php echo $book->getAuthor(); ?></li>
             <li>Date: <?php echo $book->getDate(); ?></li>
             <li>Summary: <?php echo $book->getSummary(); ?></li>
-            <li>Category: <?php echo $book->getIdcategories(); ?></li>
+            <li>Category: <?php echo $book->getIdCategories(); ?></li>
         </ul>
 
    </div>
 </div>
 
-<form class="index-book w-100" id="FormInfo" action="book_detail.php" method="post">
+<form class="index-book w-100 m-5" id="FormInfo" action="book_detail.php" method="post">
 
     <div class="select-category col-6">
-                <select class="user" name="user" required>
+                <select class="user mb-3" name="user" required>
                             <option value="" disabled>Choose the user</option>
                             
                             <?php 
@@ -41,8 +41,8 @@ include("template/header.php")
 
 </form>
 
-<form class="user_book" action="book_detail.php" method="post" enctype="multipart/form-data">
-     <div class="select-category">
+<form class="user_book w-100 m-auto" action="book_detail.php" method="post" enctype="multipart/form-data">
+     <div class="select-category ml-5">
       <label for="inlineFormCustomSelect">Category</label>
             <select class="category" name="category" required>
                         <option value="" disabled>Choose the category</option>
@@ -57,7 +57,7 @@ include("template/header.php")
                     ?>
                     </select>
     </div>
-    <div class="form-row ml-5 m-2 w-50">
+    <div class="form-row ml-5 m-2 w-70">
         <div class="form-group">
                 <label for="inputtext">Title</label>
                 <input type="text" class="form-control" name="title" id="title" placeholder="Title" required />
@@ -67,7 +67,7 @@ include("template/header.php")
             <input type="text" class="form-control" name="author" id="author" placeholder="Author" required />
         </div>
     </div>
-    <div class="form-row ml-5 m-2  w-50">
+    <div class="form-row ml-5 m-2">
         <div class="form-group col-md-6">
             <label for="inputtext">Date</label>
             <input type="date" class="form-control" id="date" name="date" placeholder="Date" required />
@@ -82,11 +82,11 @@ include("template/header.php")
             </div>
          <input type="hidden" name="id" value="<?php echo $book->getId(); ?>">
     </div>
-        <button type="submit" class="btn btn-primary" name="update">Modify</button>
+        <button type="submit" class="btn btn-primary ml-5" name="update">Modify</button>
     </form>
             <form class="delete" action="book_detail.php" method="post">
                <input type="hidden" name="id" value="<?php echo $book->getId(); ?>"  required>
-               <input class="btn btn-danger" type="submit" name="delete" value="Delete">
+               <input class="btn btn-danger ml-5" type="submit" name="delete" value="Delete">
            </form>
 
 
