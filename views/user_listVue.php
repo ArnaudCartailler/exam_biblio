@@ -20,7 +20,7 @@
   <?php foreach ($users as $user) {
     ?>
 
-<ul class="list-unstyled m-auto index-book text-center" data-aos="flip-left">
+<ul class="list-unstyled m-auto index-book text-center" data-aos="fade-right">
   <li>Firstname: <?php echo $user->getFirstname(); ?></li>
   <li>Lastname: <?php echo $user->getLastname(); ?></li>
   <li><a class="btn btn-info mb-2" href="user_detail.php?id=<?php echo $user->getId(); ?>">Details</a></li>
