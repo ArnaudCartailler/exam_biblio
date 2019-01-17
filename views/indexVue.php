@@ -24,15 +24,15 @@ if (isset($error_message)) {
   </div>
 </div>
 
-
+<div class="container-fluid">
   <div class="row">
   <?php foreach ($books as $book) 
   {
     ?>
 
-<ul class="list-unstyled m-auto index-book text-center" data-aos="fade-right">
+<ul class="list-unstyled m-auto index-book text-center col-sm-5 col-lg-2 col-7" data-aos="fade-right">
 
-    <li><img src="../assets/img/<?php echo $book->getImage(); ?>" height="150"></li>
+    <li><img class="img-fluid" src="../assets/img/<?php echo $book->getImage(); ?>" height="130"></li>
     <li>Title: <?php echo $book->getTitle(); ?></li>
     <li>Author: <?php echo $book->getAuthor(); ?></li>
     <li>Date: <?php echo $book->getDate(); ?></li>
@@ -47,6 +47,7 @@ if (isset($error_message)) {
 } 
 ?>
    </div>
+</div>
 </div>
  <?php
    include("template/footer.php")

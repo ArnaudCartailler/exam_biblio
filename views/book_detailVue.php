@@ -26,7 +26,6 @@ include("template/header.php")
                             <option value="" disabled>Choose the user</option>
                             
                             <?php 
-                            // Je boucle sur tous les différents comptes possible à créer
                             foreach ($users as $user) {
                                 ?>
                                 <option value="<?php echo $user->getId(); ?>"><?php echo $user->getFirstname(); ?></option>
